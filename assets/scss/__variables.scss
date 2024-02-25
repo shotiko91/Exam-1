@@ -1,0 +1,10 @@
+@mixin flexer ($position){
+    display: flex;
+    justify-content: $position;
+    align-items: $position;
+}
+
+$bg-color:  #171717;
+$text-color: #fafafa;
+$teacher: #a3a3a3;
+$buy: #DDD6FE;

@@ -1,0 +1,1183 @@
+@use '__variables' as var;
+
+*, ::before, ::after{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: var.$bg-color;
+    color: var.$text-color;
+}
+
+.background-image {
+    margin: 0;
+    padding: 0;
+    max-width: 2000px;
+    height: 1500px;
+    background-image: url(../images/desktop.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+// end of background
+
+.full-info{
+    position: absolute;
+    top: 0;
+    padding: 0
+}
+
+// header
+header{
+    @include var.flexer(center);
+    padding-top: 40px;
+    .navigation-bar{
+        @include var.flexer(center);
+        .under-line{
+            border-bottom: 4px solid #DDD6FE;
+        }
+        
+        a{
+            color: var.$text-color;
+                font-family: "Inter Tight";
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 28px;
+
+        }
+        
+        button{
+            border-radius: var(--border-radious-md, 8px);
+            background: var(--color-Primary-colorPrimaryBase, #DDD6FE);
+            display: flex;
+            height: var(--button-md-height, 44px);
+            min-width: var(--button-md-min-width, 44px);
+            padding: 10px var(--padding-lg, 24px);
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+        .sun{
+            width: 35px;
+            height: 35px;
+            margin-left: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--color-Border-colorBorder, #737373);
+            background: var(--color-Backgrounds-colorBgElevated, #262626);
+            display: flex;
+            padding: 11px;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            img{
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+}
+// end of header
+
+.introducing{
+    max-width: 787px;
+    max-height: 522px;
+    margin: auto;
+    margin-top: 13%;
+
+    &__heading{
+        color: #F5F5F5;
+        text-align: center;
+        font-family: "Inter Tight";
+        font-size: 80px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 110%;
+        margin-bottom: 40px;
+        }
+    &__text{
+        color: #A3A3A3;
+            text-align: center;
+            font-family: "Inter Tight";
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%;
+            margin-bottom: 40px;
+    }    
+    &__buttons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+
+        .start-travel{
+            border-radius:  8px;
+            background:  #DDD6FE;
+            display: flex;
+            height:  52px;
+            min-width: 52px;
+            padding: 14px 32px;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            color: #4C1D95;
+            font-family: "Inter Tight";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 100%;
+            letter-spacing: 0.32px;
+        }
+
+        .video{
+            box-shadow: none;
+            border:0px;
+            background:  #171717;
+            display: flex;
+            height: 52px;
+            min-width: 52px;
+            padding: 14px 24px 14px 32px;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            color: #DDD6FE;
+            font-family: "Inter Tight";
+            font-size: 16px;
+            font-style: normal;
+            letter-spacing: 0.32px;
+            font-weight: 600;
+            line-height: 100%;
+        }
+    }
+}
+
+// our goals
+.our-goals{
+    margin-top: 18%;
+    margin-bottom: 128px;
+
+    .subjects-container{
+        max-width: 1488px;
+        margin: auto;
+        display: flex;
+        gap: 20px;
+        .subject{
+            width: 486px;
+            height: 200px;
+            display: flex;
+            padding: 48px 32px;
+            align-items: flex-start;
+            gap: 10px;
+            flex: 1 0 0;
+            border-radius: 10px;
+            background: #000;
+            .icons{
+                display: flex;
+                padding: 10px;
+                align-items: flex-start;
+                gap: 10px;
+                align-self: stretch;
+            }
+            .benefits{
+                max-width: 322px;
+                min-height: 104px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                &__heading{
+                    font-family: "Inter Tight";
+                        font-size: 38px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 100%;
+                }
+                &__text{
+                    font-family: "Inter Tight";
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 28px;
+                }
+            }
+        }
+    }
+}
+
+// courses
+
+.popular-courses{
+    padding: 128px 0px;
+    max-width: 1490px;
+    &__course-section-heading{
+        display: flex;
+        justify-content: center;
+        font-family: "Inter Tight";
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+        margin-bottom: 40px;
+    }
+    .courses{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        .cours-cards{
+            display: flex;
+            width: 354.5px;
+             height: 520px;
+            padding: 20px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+            border-radius: 16px;
+            border: 1px solid  #737373;
+            background: #262626;
+            .card-img{
+                height: 166px;
+                img {
+                        border-radius: 16px;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center;   
+                    }
+            }
+            .course-name{
+                font-family: "Inter Tight";
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 32px;
+            }
+            .teacher{
+                color: var.$teacher;
+                font-family: "Inter Tight";
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 100%;
+                letter-spacing: 0.28px;
+            }
+            .duration{
+                max-height: 20px;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                align-self: stretch;
+                p{
+                    font-family: "Inter Tight";
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 100%;
+                    letter-spacing: 0.28px;
+                    margin-bottom: 0;
+                }
+            }
+            .price{
+                max-width: 315px;
+                display: flex;
+                align-items: flex-start;
+                gap: 5px;
+                color: var.$teacher;
+                font-family: "Inter Tight";
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 100%;
+                letter-spacing: 0.28px;
+            }
+            .buy-btn-form{
+                    display: flex;
+                    align-items: flex-start;
+                    align-self: stretch;
+                    form{
+                        width: 100%;
+                        .buy {
+                            width: 100%;
+                            border-radius: 8px;
+                            background: var.$buy;
+                            display: flex;
+                            height: 44px;
+                            min-width: 44px;
+                            padding: 10px 24px;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 8px;
+                            flex: 1 0 0;
+                            }
+                    }
+            }
+        }
+    }
+}
+
+// feedback
+
+.feedback{
+    max-width: 100vw;
+    height: 600px;
+    background-image: url(../svgs/Frame25.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include var.flexer(center);
+    margin-bottom: 160px;
+    
+   .student-name{
+        text-align: center;
+        font-family: "Inter Tight";
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+        margin-bottom: 32px;
+   }
+   .feedback-text{
+        max-width: 1094px;
+        margin: auto;
+        text-align: center;
+        font-family: "Inter Tight";
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 100%;
+   }
+}
+
+//expectations
+
+.expectations{
+    display: flex;
+    max-width: 1485px;
+    margin: auto;
+    padding: 160px 30px;
+    flex-direction: column;
+
+    .expectation-content{
+        max-height: 500px;
+        display: flex;
+        align-items: center;
+        gap: 192px;
+        align-self: stretch;
+        margin-bottom: 150px;
+        .friends-img{
+            display: flex;
+                order: 2;
+        }
+        .computer-img{
+            max-width: 500px;
+            max-height: 500px;
+            img{
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        .bet-text-section{
+            max-width: 670px;
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            align-items: flex-start;
+            gap: 20px;
+            .bet-heading{
+                font-family: "Inter Tight";
+                font-size: 48px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 100%;
+            }
+            .bet-text{
+                font-family: "Inter Tight";
+                font-size: 30px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 130%;
+                color: var.$teacher;
+            }
+        }
+    }
+}
+
+// footer 
+footer{
+    background-color: #000;
+.footer-cont{
+    display: flex;
+    max-width: 1428px;
+    margin: auto;
+    padding: 100px 30px;
+    justify-content: space-between;
+    align-items: flex-start;
+    .footer-logo{
+        margin-bottom: 60px;
+    }
+    .icons{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        align-self: stretch;
+    }
+
+    .footer-menu{
+        display: flex;
+        align-items: flex-start;
+        gap: 120px;
+        .menu-links-heading{
+            margin-bottom: 50px;
+            font-family: "Inter Tight";
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 100%;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            li{
+                margin-bottom: 30px;
+                a{
+                    font-family: "Inter Tight";
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 100%;
+                }
+            }
+        }
+    }
+}
+}
+
+.only-for-mobile {
+    display: none !important;
+}
+
+@media screen and (max-width: 1055px) and (min-width: 1026px) {
+    .mar-down {
+            margin-top: 32px !important;
+        }
+    
+}
+// TAB
+@media screen and (max-width: 1025px) {
+    body{
+        overflow-x: hidden;
+    }
+    .only-for-mobile{
+        display: none;
+    }
+    .background-image{
+        max-width: 1025px;
+        background-image: url(../images/tab.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .main-heading{
+        margin-top: 23%;
+    }
+
+    // our goals
+    .our-goals{
+        margin-top: 11%;
+        .subjects-container{
+            max-width: 1025px;
+            flex-direction: column;
+            margin-top: 20%;
+            .subject{
+                width: 865px;
+                max-width: 865px;
+                max-height: 200px;
+                margin: auto;
+            }
+        }
+    }
+        // courses
+        .courses {
+            display: grid !important;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px 25px;
+            .js{
+                grid-area: 1/2/1/6;
+            }
+            .node{
+                grid-area: 1/7/1/12;
+            }
+            .angular{
+                grid-area: 2/2/2/6;
+                
+            }
+            .wordpress{
+                grid-area: 2/7/2/12;
+            }
+            .cours-cards{
+                display: flex !important;
+            }
+            .card-img {
+                height: 200px;
+            }
+        }
+
+
+
+
+    .feedback{
+        max-width: 1025px !important;
+        background-image: url(../images/tab-pink.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        .feedback-text {
+                max-width: 865px;
+            }
+    }
+    
+    .expectations{
+        max-width: 1025px;
+        gap: 150px;
+        .expectation-content{
+            max-width: 865px;
+            max-height: 800px;
+            margin: auto;
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            gap: 12px var(--spacing-sm, 12px);
+            align-self: stretch;
+            flex-wrap: wrap;
+        }
+        .friends-text{
+            order: 2;
+        }
+        .bet-text-section{
+                gap: 20px;
+                .bet-heading {
+                        margin: auto;
+                    }
+                
+                    .bet-text {
+                        margin: auto;
+                        text-align: center;
+                    }
+        }
+       
+    }
+
+    // footer
+    footer{
+        max-width: 1025px;
+        padding: 80px;
+        .footer-cont{
+            flex-direction: column;
+            gap: 100px;
+        }
+    }
+}
+
+
+// mobile
+@media screen and (max-width: 900px) and (min-width: 432px) {
+    .subjects-container{
+        max-width: 700px !important;
+        margin: 20% auto !important;
+        .subject{
+            max-width: 700px !important;
+        }
+    }
+    
+}           
+@media screen and (max-width: 830px) and (min-width: 432px) {
+    .background-image{
+        height: 1300px !important;
+    }
+    .introducing{
+        max-width: 600px !important;
+        &__heading{
+            font-size: 60px !important;
+        }
+        &__text{
+            font-size: 22px !important;
+        }
+    }
+    .courses{ 
+            max-width: 830px !important;
+            .js {
+            grid-area: 1/2/1/5;
+            }
+            .node {
+                grid-area: 1/5/1/10 ;
+            }
+            .wordpress{
+                grid-area: 2/5/2/10 ;
+            }
+
+        }
+        .feedback-text{
+            font-size: 30px !important;
+            max-width: 700px !important;
+        }
+        .footer-menu{
+            gap: 80px !important;
+            .menu-links{
+                .menu-links-heading{
+                    font-size: 25px !important;
+                    font-weight: 500 !important;
+                    ul{
+                        li{
+                            a{
+                                font-size: 19px !important;
+                                font-weight: 300 !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+}
+
+@media screen and (max-width: 790px) and (min-width: 432px) {
+
+    .courses{
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+}
+
+@media screen and (max-width: 767px) and (min-width: 432px){
+    .background-image{
+        height: 1200px !important;
+    }
+    .nav-not-for-mobile{
+        max-width: 750px !important;
+            margin: auto !important;
+    }
+    footer{
+        padding: 80px 30px;
+    }
+}
+@media screen and (max-width: 720px) and (min-width: 432px) {
+    .subjects-container {
+        max-width: 500px !important;
+        margin: 20% auto !important;
+
+        .subject {
+            max-width: 500px !important;
+        }
+    }
+
+}
+@media  screen and (max-width: 680px) and (min-width: 432px) {
+    .background-image{
+        height: 1100px !important;
+    }
+}
+@media screen and (max-width: 660px) and (min-width: 432px) {
+    header .navigation-bar a{
+        font-size: 16px !important;
+    }
+    .student-name{
+        font-size: 40px !important;
+    }
+    .feedback-text{
+        max-width: 500px !important;
+        font-size: 24px !important;
+    }
+}
+@media screen and (max-width: 609px) and (min-width: 432px) {
+    .background-image {
+        height: 900px !important;
+    }
+    .sun{
+        display: none !important;
+    }
+        .introducing {
+            &__heading {
+                font-size: 40px !important;
+            }
+    
+            &__text {
+                font-size: 18px !important;
+            }
+    }
+        .big-exprole-topics {
+            flex-direction: column !important;
+            flex-wrap: nowrap !important;
+        }
+        footer{
+            padding: 50px 0px;
+        }
+}
+@media screen and (max-width: 590px) and (min-width: 432px) {
+    .footer-menu{
+        gap: 45px !important;
+        .write-center{
+            text-align: center !important;
+        }
+        .write-right{
+            text-align: end !important;
+        }
+    }
+}
+@media screen and (max-width: 557px) and (min-width: 432px) {
+    .nav-not-for-mobile{
+        display: none !important;
+    }
+    .only-for-mobile{
+        display: block !important;
+        max-width: 550px !important;
+        justify-content: center !important;
+        .collapse {
+                .p-4 {
+                    .nav {
+                        margin: auto;
+                    }
+        
+                    form {
+                        button {
+                            width: 100%;
+                            height: 50px;
+                            border-radius: var(--border-radious-md, 8px);
+                            background: var(--color-Primary-colorPrimaryBase, #DDD6FE);
+                            display: flex;
+                            height: var(--button-md-height, 44px);
+                            min-width: var(--button-md-min-width, 44px);
+                            padding: 10px var(--padding-lg, 24px);
+                            justify-content: center;
+                            align-items: center;
+                            gap: 8px;
+                            color: var(--color-Primary-colorPrimaryTextButton, #4C1D95);
+                            font-family: "Inter Tight";
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: 100%;
+                            letter-spacing: 0.32px;
+                        }
+                    }
+        
+                    .sun {
+                        display: flex !important;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+        
+            .navbar {
+                width: 401px;
+            }
+    }
+    .expectation-content{
+        img{
+            max-width: 400px !important;
+        }
+        .bet-text-section{
+            max-width: 400px !important;
+            .bet-heading{
+                font-size: 30px !important;
+            }
+            .bet-text{
+                font-size: 20px !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 557px) and (min-width: 432px) {
+    .subjects-container{
+        max-width: 350px !important;
+        .subject{
+            max-width: 350px !important;
+            height: 400px !important;
+            .benefits{
+                &__heading{
+                    font-size: 25px !important;
+                }
+                &__text{
+                    font-size: 18px !important;
+                }
+            }
+        }
+    }
+    footer{
+        .footer-cont{
+            padding: 10px;
+        }
+    }
+}
+@media screen and (max-width: 557px) and (min-width: 432px) {
+    .background-image{
+        height: 800px !important;
+    }
+    .main-heading{
+        margin-top: 0 !important;
+    }
+}
+@media screen and (max-width: 470px){
+footer {
+       max-width: 470px !important;
+        padding: 10px !important;
+
+        .footer-cont {
+            padding: 20px auto !important;
+
+            .footer-menu {
+                flex-direction: column !important;
+                margin: auto !important;
+
+                .menu-links {
+                    margin: auto !important;
+
+                    .menu-links-heading {
+                        display: flex !important;
+                        justify-content: center !important;
+                    }
+
+                    .menu-links-list {
+                        text-align: center !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 431px) {
+  
+    body {
+            
+            max-width: 426px;
+            
+        }.background-image{
+            height: 700px !important;
+            max-width: 430px !important;
+            background-image: url(../images/mobile.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+            
+                 header {
+                     max-width: 431px;
+                     padding: 40px 15px;
+        
+                 }
+
+                  .nav-not-for-mobile {
+                      display: none !important;
+                  }
+
+        .only-for-mobile {
+            max-width: 426px;
+            display: block !important;
+            justify-content: center;
+            .collapse{
+                .p-4{
+                    .nav{
+                        margin: auto;
+                    }
+                    form{
+                        button{
+                            width: 100%;
+                            height: 50px;
+                            border-radius: var(--border-radious-md, 8px);
+                            background: var(--color-Primary-colorPrimaryBase, #DDD6FE);
+                            display: flex;
+                            height: var(--button-md-height, 44px);
+                            min-width: var(--button-md-min-width, 44px);
+                            padding: 10px var(--padding-lg, 24px);
+                            justify-content: center;
+                            align-items: center;
+                            gap: 8px;
+                            color: var(--color-Primary-colorPrimaryTextButton, #4C1D95);
+                            font-family: "Inter Tight";
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: 100%;
+                            letter-spacing: 0.32px;
+                        }
+                    }
+                    .sun{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+            .navbar {
+                    width: 301px !important;
+                }
+
+        }
+       
+        main{
+                margin-top: 0 !important;
+        }
+    .main-heading{
+        max-width: 401px;
+        min-height: 422px;
+        margin: auto;
+        .introducing{
+            gap: 40px;
+            &__heading{
+                text-align: center;
+                font-family: "Inter Tight";
+                font-size: 38px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 100%
+            }
+            &__text{
+                text-align: center;
+                font-family: "Inter Tight";
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 130%;
+            }
+        }
+    }
+
+    // 
+    .our-goals{
+        max-width: 426px;
+        .subjects-container{
+            max-width: 426px;
+            .subject {
+                    max-width: 380px;
+                    min-height: 196px;
+                    margin: auto;
+                    padding: 48px 32px;
+            
+                    .benefits {
+                        max-width: 280px;
+            
+                        .benefits__heading {
+                            font-family: "Inter Tight";
+                            font-size: 30px;
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: 38px;
+                        }
+            
+                        .benefits__text {
+                            font-family: "Inter Tight";
+                            font-size: 20px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: 130%;
+                        }
+                    }
+           }
+        }
+    }
+
+    //  
+
+    .courses{
+        flex-direction: column !important;
+        display: flex !important;
+        align-items: center;
+        .cours-cards{
+            margin: auto;
+        }
+    }
+    // 
+    // 
+
+        .feedback {
+            max-width: 431px !important;
+            background-size: cover;
+            background-position: center;
+            justify-content: center;
+            align-items: center;
+            .feedback-text {
+                max-width: 401px;
+                margin: auto;
+
+                .student-name{
+                    font-size: 30px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 38px;
+                }
+                .feedback-text{
+                    font-size: 24px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 32px;
+                }
+            }
+        }
+        .expectations{
+            max-width: 426px;
+            padding: 0;
+            margin-bottom: 100px;
+            .expectation-content{
+                max-width: 401px;
+                flex-direction: column;
+               justify-self: center;
+               justify-content: center;
+               align-items: center;
+               padding: 0;
+                img{
+                    max-width: 250px !important;
+                    object-fit: cover;
+                    object-position: center;
+                }
+                .bet-text-section{
+                    max-width: 300px !important;
+
+                    .bet-heading{
+                        font-size: 30px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 38px;
+                    }
+                    .bet-text{
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 28px;
+                    }
+                }
+            }
+        }
+    footer{
+        max-width: 430px;
+        padding: 5px;
+        .footer-cont{
+            padding: 20px auto;
+            .footer-menu{
+                flex-direction: column;
+                margin: auto;
+                .menu-links{
+                    margin: auto;
+                    .menu-links-heading{
+                        display: flex;
+                        justify-content: center;
+                    }
+                    .menu-links-list{
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }    
+}        
+@media screen and (max-width: 400px) and (min-width: 359px) {
+    .p-4{
+        padding: 20px 0px !important;
+    }
+    .subject{
+        max-width: 270px !important;
+        margin: auto !important;
+        align-items: center !important;
+        .benefits{
+            &__heading{
+                font-size: 20px !important;
+                margin-bottom: 8px !important;
+            }
+            &__text{
+                font-size: 13px !important;
+            }
+        }
+    }
+
+    .courses{
+        padding:20px 0px !important;
+    }
+}
+@media screen and (max-width: 358px) and (min-width: 280px) {
+
+    .background-image{
+        max-width: 358px !important;
+        height: 500px !important;
+    }
+         .p-4 {
+             padding: 20px 0px !important;
+         }
+    .subject {
+            max-width: 270px !important;
+            margin: auto !important;
+            align-items: center !important;
+    
+            .benefits {
+                &__heading {
+                    font-size: 20px !important;
+                    margin-bottom: 8px !important;
+                }
+    
+                &__text {
+                    font-size: 13px !important;
+                }
+            }
+        }
+    .popular-courses{
+        &__course-section-heading{
+            font-size: 20px !important;
+        }
+        .cours-cards{
+            max-width: 275px !important;
+            margin: auto;
+        }
+    }
+        .courses {
+            padding: 20px 0px !important;
+        }
+
+
+        .footer-cont{
+            padding: 20px 0 !important;
+            .icons{
+                img{
+                    width: 30px !important;
+                }
+            }
+        }
+
+    }
+
+        @media screen and (max-width: 349px) and (min-width: 280px) {
+           .nav-link{
+                padding: 8px !important;
+           }
+        }
+@media screen and (max-width: 302px) and (min-width: 280px) {
+    .background-image{
+        max-width: 302px !important;
+
+    }
+    .navbar{
+        max-width: 270px !important;
+    }
+    .our-goals{
+        .subjects-container{
+            .subject{
+                width: 250px !important;
+                margin: auto !important;
+                align-items: center !important;
+            }
+        }
+    }
+    .student-name{
+        font-size: 20px !important;
+    }
+    .feedback-text{
+        font-size: 14px !important;
+    }
+}
